@@ -7,11 +7,13 @@ public class FilmItem {
     private String genre;
 
     public FilmItem(int id, String url, String filmName, String genre) {
-
+        this.id = id;
+        this.url = url;
+        this.filmName = filmName;
+        this.genre = genre;
     }
 
-    public FilmItem() {
-    }
+    public FilmItem() {}
 
     public int getId() {
         return id;
