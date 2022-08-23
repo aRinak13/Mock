@@ -6,7 +6,6 @@ import ru.netology.domain.FilmItem;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FilmManagerTest {
-
     @Test
     public void add3FilmsAndGetLastAdded() {
         FilmManager film = new FilmManager();
@@ -27,7 +26,6 @@ class FilmManagerTest {
         };
 
         assertArrayEquals(expected, actual);
-
 
     }
 
@@ -113,4 +111,42 @@ class FilmManagerTest {
 
         assertArrayEquals(expected, actual);
 }
+
+    @Test
+    public void add0Films() {
+        FilmManager film = new FilmManager();
+        film.getLastAdded();
+
+        FilmItem[] actual = film.getLastAdded();
+        FilmItem[] expected = new FilmItem[] {
+        };
+
+        assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void getCountFilms() {
+        FilmManager film = new FilmManager();
+        film.getCountFilm();
+
+        int actual = film.getCountFilm();
+        int expected = 10;
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void getCountFilms5() {
+        FilmManager film = new FilmManager(5);
+        film.getCountFilm();
+
+        int actual = film.getCountFilm();
+        int expected = 5;
+
+        assertEquals(expected, actual);
+
+    }
+
 }
