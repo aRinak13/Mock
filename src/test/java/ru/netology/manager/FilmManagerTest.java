@@ -16,10 +16,34 @@ class FilmManagerTest {
         film.add(film1);
         film.add(film2);
         film.add(film3);
+        film.findAll();
         film.getLastAdded();
 
         FilmItem[] actual = film.getLastAdded();
-        FilmItem[] expected = new FilmItem[] {
+        FilmItem[] expected = new FilmItem[]{
+                film3,
+                film2,
+                film1
+        };
+
+        assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void add3FilmsAndFindAll() {
+        FilmManager film = new FilmManager();
+
+        FilmItem film1 = new FilmItem(1, "image1", "Отпуск по обмену", "Комедия");
+        FilmItem film2 = new FilmItem(2, "image2", "Гарри Поттер и узник Азкабана", "Фантастика");
+        FilmItem film3 = new FilmItem(3, "image3", "Глаз", "Ужасы");
+        film.add(film1);
+        film.add(film2);
+        film.add(film3);
+        film.findAll();
+
+        FilmItem[] actual = film.findAll();
+        FilmItem[] expected = new FilmItem[]{
                 film3,
                 film2,
                 film1
@@ -56,7 +80,7 @@ class FilmManagerTest {
         film.getLastAdded();
 
         FilmItem[] actual = film.getLastAdded();
-        FilmItem[] expected = new FilmItem[] {
+        FilmItem[] expected = new FilmItem[]{
                 film10,
                 film9,
                 film8,
@@ -101,7 +125,7 @@ class FilmManagerTest {
         film.getLastAdded();
 
         FilmItem[] actual = film.getLastAdded();
-        FilmItem[] expected = new FilmItem[] {
+        FilmItem[] expected = new FilmItem[]{
                 film10,
                 film9,
                 film8,
@@ -110,7 +134,7 @@ class FilmManagerTest {
         };
 
         assertArrayEquals(expected, actual);
-}
+    }
 
     @Test
     public void add0Films() {
@@ -118,7 +142,7 @@ class FilmManagerTest {
         film.getLastAdded();
 
         FilmItem[] actual = film.getLastAdded();
-        FilmItem[] expected = new FilmItem[] {
+        FilmItem[] expected = new FilmItem[]{
         };
 
         assertArrayEquals(expected, actual);

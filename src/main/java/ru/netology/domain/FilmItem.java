@@ -13,7 +13,8 @@ public class FilmItem {
         this.genre = genre;
     }
 
-    public FilmItem() {}
+    public FilmItem() {
+    }
 
     public int getId() {
         return id;

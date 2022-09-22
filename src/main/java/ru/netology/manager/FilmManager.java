@@ -12,41 +12,47 @@ public class FilmManager {
 
     private FilmItem[] items = new FilmItem[0];
 
-        public FilmManager() {
+    public FilmManager() {
 
-        }
+    }
 
-        public FilmManager (int countFilm) {
+    public FilmManager(int countFilm) {
 
-            this.countFilm = countFilm;
-        }
+        this.countFilm = countFilm;
+    }
 
-        public void add(FilmItem item) {
-            int length = items.length + 1;
-            FilmItem[] tmp = new FilmItem[length];
-            for (int i = 0; i < items.length; i++) {
+    public void add(FilmItem item) {
+        int length = items.length + 1;
+        FilmItem[] tmp = new FilmItem[length];
+        for (int i = 0; i < items.length; i++) {
             tmp[i] = items[i];
-            }
-            int lastIndex = tmp.length - 1;
-            tmp[lastIndex] = item;
-            items = tmp;
         }
+        int lastIndex = tmp.length - 1;
+        tmp[lastIndex] = item;
+        items = tmp;
+    }
 
-        public FilmItem[] getLastAdded() {
-            int resultLength;
-            if (items.length < this.countFilm) {
-                resultLength = items.length;
-            } else {
-                resultLength = this.countFilm;
-            }
-            FilmItem[] result = new FilmItem[resultLength];
-            if (items.length > 0) {
-                int index = 0;
-                for (int i = items.length - 1; i > items.length - resultLength - 1; i--) {
-                    result[index] = items[i];
-                    index++;
-                }
-            }
-            return result;
+    public FilmItem[] findAll() {
+        FilmItem[] result = new FilmItem[items.length];
+
+        return result;
+    }
+
+    public FilmItem[] getLastAdded() {
+        int resultLength;
+        if (items.length < this.countFilm) {
+            resultLength = items.length;
+        } else {
+            resultLength = this.countFilm;
         }
+        FilmItem[] result = new FilmItem[resultLength];
+        if (items.length > 0) {
+            int index = 0;
+            for (int i = items.length - 1; i > items.length - resultLength - 1; i--) {
+                result[index] = items[i];
+                index++;
+            }
+        }
+        return result;
+    }
 }
