@@ -34,8 +34,6 @@ public class FilmManager {
 
     public FilmItem[] getAll() {
         FilmItem[] result = new FilmItem[items.length];
-        // перебираем массив в прямом порядке
-        // но кладём в результаты в обратном
         for (int i = 0; i < result.length; i++) {
             int index = items.length + i - items.length;
             result[i] = items[index];
